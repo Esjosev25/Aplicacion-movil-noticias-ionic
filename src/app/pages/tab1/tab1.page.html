@@ -1,0 +1,19 @@
+<ion-header no-border [translucent]="true">
+
+    <ion-toolbar>
+        <ion-title class="tab-title">
+            New's
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+    <app-noticias [noticias]="noticias"></app-noticias>
+
+
+    <ion-infinite-scroll color="primary" [disabled]="false" threshold="150px" (ionInfinite)="loadData($event)">
+        <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Cargando noticias...">
+        </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+</ion-content>

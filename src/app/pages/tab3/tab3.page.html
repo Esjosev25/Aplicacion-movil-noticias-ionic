@@ -1,0 +1,28 @@
+<ion-header no-border [translucent]="true">
+
+    <ion-toolbar>
+        <ion-title class="tab-title">
+            Favoritos
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+
+    <div *ngIf="datalocalService.noticias.length===0" class="center-div">
+        <ion-card>
+            <ion-card-header>
+
+                <ion-card-title>Sin Favoritos</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+                Esta un poco vacio aca, agrega un par de noticias favoritas :)
+            </ion-card-content>
+        </ion-card>
+
+    </div>
+    <app-noticias *ngIf="datalocalService.noticias.length>0" [noticias]="datalocalService.noticias" [tabFav]="true"></app-noticias>
+
+
+</ion-content>
